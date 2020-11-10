@@ -4,21 +4,26 @@ import java.util.Scanner;
 
 public class BasicCommands_01 {
     public static void main(String[] args) {
-        System.out.println("Enter following commands: ");
-        System.out.println("* 'h' for help");
-        System.out.println("* 'q' to quit the program");
+        System.out.println("Welcome to my console app, type 'h' to learn more.");
         Scanner input = new Scanner(System.in);
         String letter = "";
 
         //command line with neverending loop unless 'q' pressed for quit
         while(true) {
             letter = input.nextLine();
-            if(letter.equals("q"))
+            if (letter.equals("h")){
+                System.out.println("Here is a list of commands");
+                System.out.println("* 'h' for help");
+                System.out.println("* 'q' to quit the program");
+                System.out.println("* 's' for set command, e.g. to read from console and write into file: set -r 'console' -w 'file'");
+            }
+            else if (letter.equals("q")) {
+                System.out.println("The console app will quit");
                 break;
-            else if (letter.equals("h"))
-                System.out.println("ToBeDone> List of commands");
+            }
             else
                 System.out.println("This is not a valid command");
         }
+
     }
 }
