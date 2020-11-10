@@ -15,7 +15,6 @@ public class BasicCommands_01 {
                 System.out.println("Here is a list of commands");
                 System.out.println("* 'h' for help");
                 System.out.println("* 'q' to quit the program");
-                System.out.println("* 's' for set command, e.g. to read from console and write into file: set -r 'console' -w 'file'");
             }
             else if (letter.equals("q")) {
                 System.out.println("The console app will quit");
