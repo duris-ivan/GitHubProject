@@ -17,7 +17,7 @@
             System.out.println("Here is a list of commands");
             System.out.println("* 'h' for help");
             System.out.println("* 'q' to quit the program");
-            System.out.println("* 'set' to set read/write mode");
+            System.out.println("* 'set' to set read/write mode, e.g. 'set -r console -w file'");
         }
 
         public static void writingIntoFile(String outputFile, String line) throws IOException {
