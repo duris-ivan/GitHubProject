@@ -2,37 +2,71 @@ package co.instea;
 
 public class SetMethod {
     public static void setMethod (String[] setMode){
-        for (int i=0; i<setMode.length; i++){
-            if (i==0){
-                continue;
-            }
-            else if (setMode[i].equals("-r")){
-                System.out.print("read: ");
+        String inputType;
+        String outputType;
+
+        String oldInput = "from console";
+        String oldOutput = "to console";
+
+        String newInput= null;
+        String newOutput = null;
+        boolean errorOccurred=false;
+
+        for (int i=1; i<setMode.length; i++){
+            if (setMode[i].equals("-r")){ //reading Mode
                 if (setMode.length>2){
-                    if (setMode[i+1].equals("file"))
-                        System.out.print(" from file, ");
-                    else if(setMode[i+1].equals("console"))
-                        System.out.print(" from console, ");
-                    else
-                        System.out.println("reading error");
+                    if (setMode[i+1].equals("file")){
+                        newInput = " file"; // reading from file
+                    }
+                    else if(setMode[i+1].equals("console")){
+                        newInput = " console";  //reading from console
+                    }
+                    else{
+                        errorOccurred=true;
+                        break;
+                    }
                 }
             }
-            else if (setMode[i].equals("-w")) {
-                System.out.print("write: ");
+            else if (setMode[i].equals("-w")) { //writing Mode
                 if (setMode.length>2){
-                    if (setMode[i+1].equals("file"))
-                        System.out.print(" into file, ");
-                    else if(setMode[i+1].equals("console"))
-                        System.out.print(" into console, ");
-                    else
-                        System.out.println("writing error");
+                    if (setMode[i+1].equals("file")){ //writing into file
+                        newOutput= " file, ";
+                    }
+                    else if(setMode[i+1].equals("console")){ ////writing into console
+                        newOutput = " console, ";
+                    }
+                    else{
+                        errorOccurred = true;
+                        break;
+                    }
                 }
             }
-            else
+            else{
                 if (setMode[0].equals("set") && (setMode[1].equals("-r") || setMode[1].equals("-w")))
                     continue;
-                else
+                else {
                     System.out.println("error in set command");
+                    break;
+                }
+            }
+        }
+
+        if(!errorOccurred){
+            inputType=newInput;
+            if (inputType==null)
+                inputType=oldInput;
+            System.out.println("read from " + inputType);
+            outputType=newOutput;
+            if (outputType==null)
+                outputType=oldInput;
+            System.out.println("write into " + outputType);
+        }
+        else { //error has occurred
+            System.out.println("Error Reading / Writing");
+            inputType = oldInput;
+            System.out.println("read from " + inputType);
+            outputType = oldOutput;
+            System.out.println("write into " + outputType);
         }
     }
 }
