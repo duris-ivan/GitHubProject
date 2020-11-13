@@ -5,8 +5,8 @@ public class SetMethod {
         String inputType;
         String outputType;
 
-        String oldInput = "from console";
-        String oldOutput = "to console";
+        String oldInput = "console";
+        String oldOutput = "console";
 
         String newInput= null;
         String newOutput = null;
@@ -58,7 +58,7 @@ public class SetMethod {
             System.out.println("read from " + inputType);
             outputType=newOutput;
             if (outputType==null)
-                outputType=oldInput;
+                outputType=oldOutput;
             System.out.println("write into " + outputType);
         }
         else { //error has occurred
