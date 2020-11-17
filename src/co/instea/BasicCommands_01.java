@@ -32,11 +32,5 @@ public class BasicCommands_01 {
                 System.out.println("This is not a valid command");
                 continue;
         }
-
-
-
-
-
     }
-
 }
