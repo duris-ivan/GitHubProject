@@ -19,7 +19,7 @@ public class BasicCommands_01 {
             inputCommandTrim = inputCommand.trim(); //trims unnecessary white spaces of command line
             String[] setMode = inputCommandTrim.split("\\s"); //splits the string based on whitespace
             if (setMode[0].equals("h")){
-                Settings_02.listOfCommands();
+                FileWriter.listOfCommands();
             }
             else if (setMode[0].equals("q")) {
                 System.out.println("The console app will quit");
