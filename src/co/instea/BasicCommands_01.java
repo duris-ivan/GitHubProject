@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class BasicCommands_01 {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         System.out.println("Welcome to my console app, type 'h' to learn more.");
         Scanner input = new Scanner(System.in);
 
@@ -26,7 +26,7 @@ public class BasicCommands_01 {
                 break;
             }
             else if (setMode[0].equals("set")) {
-                SetMethod.setMethod(setMode);
+                CommandExecution.setMethod(setMode);
             }
             else
                 System.out.println("This is not a valid command");
