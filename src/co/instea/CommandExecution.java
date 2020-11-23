@@ -18,34 +18,36 @@ public class CommandExecution {
         String[] switchArray= {"-r","-w"};
         String[] valueArray= {"console","file"};
 
-
         //loop to separate all setModeCommands into array of size two: switch and value
         try{
+            if(setMode.length==1)
+                throw new Exception("caught error - only one word entered");
+
             for(int i=1;i<setMode.length;i+=2){
                 sWitch=setMode[i];
                 if(i>=0 && (i+1)<setMode.length)
                     value=setMode[i+1];
                 else
                     throw new Exception("caught error - value was out of Array Bounds");
-                /*for (int j=0;j<switchArray.length;j++){
-                    if (!sWitch.equals(switchArray[j])){
 
+                boolean matchOccurred=false;
+                for (int j=0;j<switchArray.length;j++){
+                    if (sWitch.equals(switchArray[j])){
+                        matchOccurred=true;
                     }
-                }*/
+                }
+                if(!matchOccurred)
+                    throw new Exception("go to catch - NoSwitch Error");
 
-                //if(!sWitch.equals(switchArray[0]) && !sWitch.equals(switchArray[1])){
-                /*if(!sWitch.equals(switchArray[0])){
-                    throw new Exception("go to catch - NoSwitch Error");
+                matchOccurred=false;
+                for (int j=0;j<valueArray.length;j++){
+                    if (value.equals(valueArray[j])){
+                        matchOccurred=true;
+                    }
                 }
-                else if(!sWitch.equals(switchArray[1])){
-                    throw new Exception("go to catch - NoSwitch Error");
-                }
-                if(!value.equals(valueArray[0])){
+                if(!matchOccurred)
                     throw new Exception("go to catch - NoValue Error");
-                }
-                else if(!value.equals(valueArray[1])){
-                    throw new Exception("go to catch - NoValue Error");
-                }*/
+
                 if(sWitch.equals(switchArray[0])){
                     if(value.equals(valueArray[0]))
                         inputType="console";
@@ -59,18 +61,19 @@ public class CommandExecution {
                         outputType="file";
                 }
             }
+            Settings settings = new Settings(inputType,outputType);
+            System.out.println("Input Type:"+ settings.getInputType());
+            System.out.println("Output Type:"+ settings.getOutputType());
+            return settings;
 
         }
         catch(Exception e){
             System.out.println("error in set command");
             e.printStackTrace();
+            return null;
         }
         finally {
             System.out.println("this is always written");
         }
-        Settings settings = new Settings(inputType,outputType);
-        System.out.println("Input Type:"+ settings.getInputType());
-        System.out.println("Output Type:"+ settings.getOutputType());
-        return settings;
     }
 }

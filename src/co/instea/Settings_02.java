@@ -1,9 +1,13 @@
     package co.instea;
 
-    import java.io.*;
+    import java.io.BufferedReader;
+    import java.io.BufferedWriter;
+    import java.io.FileReader;
+    import java.io.IOException;
     import java.util.Scanner;
+    import co.instea.FileWriter;
 
-    public class Settings_02 {
+    public class Settings_02 { /*
         public static final String outputFile = "c:/Users/duris/IdeaProjects/GitHubProject/vystup.txt";
 
         public static void main(String[] args) throws IOException {
@@ -81,4 +85,4 @@
 
 
 
-    }
+*/    }
