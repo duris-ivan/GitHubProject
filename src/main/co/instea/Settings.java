@@ -1,6 +1,4 @@
-package co.instea;
-
-import java.util.Set;
+package main.co.instea;
 
 public class Settings {
     private String inputType;

@@ -1,8 +1,6 @@
-package co.instea;
+package main.co.instea;
 
-import java.io.IOException;
 import java.util.Scanner;
-import java.util.Set;
 
 public class BasicCommands_01 {
 

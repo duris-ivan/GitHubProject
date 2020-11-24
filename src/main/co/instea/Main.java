@@ -1,4 +1,4 @@
-package co.instea;
+package main.co.instea;
 
 public class Main {
 

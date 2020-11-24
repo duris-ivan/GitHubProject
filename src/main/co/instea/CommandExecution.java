@@ -1,8 +1,4 @@
-package co.instea;
-
-import javax.swing.*;
-import java.util.ArrayList;
-import java.util.Set;
+package main.co.instea;
 
 public class CommandExecution {
         public static String inputType="console";
