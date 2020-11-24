@@ -4,8 +4,8 @@ public class Settings {
     private String inputType;
     private String outputType;
 
-    public Settings(){
-    }
+   /* public Settings(){
+    }*/
 
     public Settings(String inputType, String outputType){
         this.inputType=inputType;

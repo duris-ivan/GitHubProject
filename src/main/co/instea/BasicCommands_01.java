@@ -7,10 +7,11 @@ public class BasicCommands_01 {
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to my console app, type 'h' to learn more.");
         Scanner input = new Scanner(System.in);
+        Settings settings=new Settings("console", "console");
 
         String inputCommand;
         String inputCommandTrim;
-        Settings settings =new Settings(); //current set configuration for Read/Write
+         //current set configuration for Read/Write
 
         //command line with never-ending loop unless 'q' pressed for quit
         while(true) {

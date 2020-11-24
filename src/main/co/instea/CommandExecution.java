@@ -4,6 +4,7 @@ public class CommandExecution {
         public static String inputType="console";
         public static String outputType="console";
 
+
         public static Settings setMethod (String[] setMode) throws Exception{
         String newInput= null;
         String newOutput = null;
