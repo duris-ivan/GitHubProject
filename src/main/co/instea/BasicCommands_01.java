@@ -30,8 +30,16 @@ public class BasicCommands_01 {
                 settings = CommandExecution.setMethod(setMode);
             }
             else if (setMode[0].equals("settings")) {
-                System.out.println("Input Type: " + settings.getInputType());
-                System.out.println("Output Type: " + settings.getOutputType());
+                if (settings!=null){
+                    System.out.println("Input Type: " + settings.getInputType());
+                    System.out.println("Output Type: " + settings.getOutputType());
+                }
+                else{
+                    System.out.println("Settings are set to default");
+                    settings=new Settings("console", "console");
+                    System.out.println("Input Type: " + settings.getInputType());
+                    System.out.println("Output Type: " + settings.getOutputType());
+                }
             }
             else
                 System.out.println("This is not a valid command");
