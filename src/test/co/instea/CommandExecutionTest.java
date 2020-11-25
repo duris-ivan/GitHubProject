@@ -2,7 +2,7 @@ package test.co.instea;
 
 import main.co.instea.CommandExecution;
 import main.co.instea.Settings;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Test;git
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,6 +15,7 @@ public class CommandExecutionTest {
             assertEquals(settings.getInputType(), "file");
         } catch (Exception e) {
             e.printStackTrace();
+            fail();
         }
     }
 
@@ -25,57 +26,63 @@ public class CommandExecutionTest {
             assertEquals(settings.getOutputType(), "console");
         } catch (Exception e) {
             e.printStackTrace();
+            fail();
         }
     }
 
     @Test
     public void shouldParseValidSetInputAndOutputCommand() {
         try {
-            Settings settings = CommandExecution.setMethod(new String[] {"set", "r", "file", "-w", "console"});
+            Settings settings = CommandExecution.setMethod(new String[] {"set", "-r", "file", "-w", "console"});
             assertEquals(settings.getOutputType(), "console");
             assertEquals(settings.getInputType(), "file");
         } catch (Exception e) {
             e.printStackTrace();
+            fail();
         }
     }
 
     @Test
     public void shouldFailForMissingValue() {
         try {
-            Settings settings = CommandExecution.setMethod(new String[] {"set", "r"});
+            Settings settings = CommandExecution.setMethod(new String[] {"set", "-r"});
             assertNull(settings);
         } catch (Exception e) {
             e.printStackTrace();
+            fail();
         }
     }
 
     @Test
     public void shouldFailForNotAllowedSwitch() {
         try {
-            Settings settings = CommandExecution.setMethod(new String[] {"set", "a"});
+            Settings settings = CommandExecution.setMethod(new String[] {"set", "-a", "file"});
             assertNull(settings);
         } catch (Exception e) {
             e.printStackTrace();
+            fail();
         }
     }
 
     @Test
     public void shouldFailForNotAllowedSwitchAfterValidCommand() {
         try {
-            Settings settings = CommandExecution.setMethod(new String[] {"set", "r", "file", "-w", "console", "a"});
+            Settings settings = CommandExecution.setMethod(new String[] {"set", "-r", "file", "-w", "console", "-a", "api"});
             assertNull(settings);
         } catch (Exception e) {
             e.printStackTrace();
+            fail();
         }
     }
 
     @Test
     public void shouldFailForNotAllowedValue() {
         try {
-            Settings settings = CommandExecution.setMethod(new String[] {"set", "r", "api"});
+            Settings settings = CommandExecution.setMethod(new String[] {"set", "-r", "api"});
             assertNull(settings);
         } catch (Exception e) {
             e.printStackTrace();
+            fail();
         }
     }
 
