@@ -5,9 +5,7 @@ public class CommandExecution {
         public static String outputType="console";
 
 
-        public static Settings setMethod (String[] setMode) throws Exception{
-        String newInput= null;
-        String newOutput = null;
+        public static Settings setMethod (String[] setMode) {
 
         String sWitch;
         String value;
@@ -73,11 +71,8 @@ public class CommandExecution {
         }
         catch(Exception e){
             System.out.println("error in set command");
-            e.printStackTrace();
+            //e.printStackTrace();
             return null;
-        }
-        finally {
-            System.out.println("this is always written");
         }
     }
     }

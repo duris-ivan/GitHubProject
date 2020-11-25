@@ -4,10 +4,12 @@ import java.util.Scanner;
 
 public class BasicCommands_01 {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  {
         System.out.println("Welcome to my console app, type 'h' to learn more.");
         Scanner input = new Scanner(System.in);
         Settings settings=new Settings("console", "console");
+        String oldInput = "console";
+        String oldOutput = "console";
 
         String inputCommand;
         String inputCommandTrim;
@@ -31,14 +33,14 @@ public class BasicCommands_01 {
             }
             else if (setMode[0].equals("settings")) {
                 if (settings!=null){
-                    System.out.println("Input Type: " + settings.getInputType());
-                    System.out.println("Output Type: " + settings.getOutputType());
+                    oldInput = settings.getInputType();
+                    oldOutput = settings.getOutputType();
+                    System.out.println("Input Type: " + oldInput);
+                    System.out.println("Output Type: " + oldOutput);
                 }
                 else{
-                    System.out.println("Settings are set to default");
-                    settings=new Settings("console", "console");
-                    System.out.println("Input Type: " + settings.getInputType());
-                    System.out.println("Output Type: " + settings.getOutputType());
+                    System.out.println("Input Type: " + oldInput);
+                    System.out.println("Output Type: " + oldOutput);
                 }
             }
             else

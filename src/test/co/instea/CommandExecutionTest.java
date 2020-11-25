@@ -2,7 +2,7 @@ package test.co.instea;
 
 import main.co.instea.CommandExecution;
 import main.co.instea.Settings;
-import org.junit.jupiter.api.Test;git
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
