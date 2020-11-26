@@ -30,18 +30,14 @@ public class BasicCommands_01 {
             }
             else if (setMode[0].equals("set")) {
                 settings = CommandExecution.setMethod(setMode);
-            }
-            else if (setMode[0].equals("settings")) {
-                if (settings!=null){
+                if (settings!=null){ //saving the parameters
                     oldInput = settings.getInputType();
                     oldOutput = settings.getOutputType();
-                    System.out.println("Input Type: " + oldInput);
-                    System.out.println("Output Type: " + oldOutput);
                 }
-                else{
-                    System.out.println("Input Type: " + oldInput);
-                    System.out.println("Output Type: " + oldOutput);
-                }
+            }
+            else if (setMode[0].equals("settings")) {
+                System.out.println("Input Type: " + oldInput);
+                System.out.println("Output Type: " + oldOutput);
             }
             else
                 System.out.println("This is not a valid command");

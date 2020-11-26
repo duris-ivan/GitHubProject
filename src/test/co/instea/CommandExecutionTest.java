@@ -86,4 +86,26 @@ public class CommandExecutionTest {
         }
     }
 
+    @Test
+    public void shouldFailForNotAllowedValueAfterValidSwitch() {
+        try {
+            Settings settings = CommandExecution.setMethod(new String[] {"set", "-r", "console","-w","api"});
+            assertNull(settings);
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail();
+        }
+    }
+
+    @Test
+    public void shouldFailForMissingSwitch() {
+        try {
+            Settings settings = CommandExecution.setMethod(new String[] {"set"});
+            assertNull(settings);
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail();
+        }
+    }
+
 }
