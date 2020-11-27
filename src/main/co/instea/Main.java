@@ -32,10 +32,10 @@ public class Main {
             System.out.println();
             inputCommand = input.nextLine(); //scanning input
             inputCommandTrim = inputCommand.trim(); //trims unnecessary white spaces of command line
-            String[] setMode = inputCommandTrim.split("\\s"); //splits the string based on whitespace
+            String[] commandParts = inputCommandTrim.split("\\s"); //splits the string based on whitespace
             for (Command command: listOfCommands) {
-                if (command.shouldBeExecuted(setMode[0])) {
-                    command.execute(setMode);
+                if (command.shouldBeExecuted(commandParts[0])) {
+                    command.execute(commandParts);
                     continue outerLoop;
                 }
             }
