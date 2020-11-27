@@ -8,8 +8,8 @@ public class QuitCommand extends Command{
     }
 
     @Override
-    public void execute() {
-
+    public void execute(String[] commandParts) {
+        System.exit(0);
     }
 
     @Override

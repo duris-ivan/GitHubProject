@@ -4,6 +4,17 @@ public class CommandExecution {
         public static String inputType="console";
         public static String outputType="console";
 
+        private static Settings currentSettings = new Settings("console", "console");
+
+        public static void setCurrentSettings(Settings settings) {
+            if (settings == null) return;
+            currentSettings = settings;
+        }
+
+        public static Settings getCurrentSettings() {
+            return currentSettings;
+        }
+
 
         public static Settings setMethod (String[] setMode) {
 

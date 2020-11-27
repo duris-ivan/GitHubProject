@@ -11,7 +11,11 @@ public abstract class Command {
         this.allowedValues=allowedValues;
     }
 
-    public abstract void execute();
+    public boolean shouldBeExecuted(String keyword) {
+        return keyword.equals(this.keyword);
+    }
+
+    public abstract void execute(String[] commandParts);
 
     public abstract String help();
 }
