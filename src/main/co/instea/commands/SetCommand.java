@@ -9,23 +9,22 @@ public class SetCommand extends Command {
     }
     private String inputType="";
     private String outputType="";
-    private Settings currentSettings = new Settings("console", "console");
+    public Settings currentSettings = new Settings("console","console");
+
+    @Override
+    public void execute(String[] commandParts) {
+        Settings newSettings = setMethod(commandParts);
+//        if (newSettings != null) {
+            setCurrentSettings(newSettings);
+    }
 
     public void setCurrentSettings(Settings settings) {
         if (settings == null) return;
         currentSettings = settings;
     }
 
-    public  Settings getCurrentSettings() {
+    public Settings getCurrentSettings() {
         return currentSettings;
-    }
-
-    @Override
-    public void execute(String[] commandParts) {
-        Settings newSettings = setMethod(commandParts);
-        if (newSettings != null) {
-            setCurrentSettings(newSettings);
-        }
     }
 
     @Override
@@ -103,4 +102,5 @@ public class SetCommand extends Command {
             return null;
         }
     }
+
 }

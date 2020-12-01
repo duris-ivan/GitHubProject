@@ -11,7 +11,8 @@ public class SettingsCommand extends Command{
 
     @Override
     public void execute(String[] commandParts) {
-        Settings actualSettings = CommandExecution.getCurrentSettings();
+        SetCommand setCommand = new SetCommand("set", new String[] {"-r", "-w"}, new String[] {"file","console"});
+        Settings actualSettings = setCommand.getCurrentSettings();
         System.out.println("Input: " + actualSettings.getInputType());
         System.out.println("Output: " + actualSettings.getOutputType());
     }
