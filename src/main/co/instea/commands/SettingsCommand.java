@@ -2,6 +2,7 @@ package main.co.instea.commands;
 
 import main.co.instea.CommandExecution;
 import main.co.instea.Settings;
+import main.co.instea.Main;
 
 public class SettingsCommand extends Command{
 
@@ -11,8 +12,7 @@ public class SettingsCommand extends Command{
 
     @Override
     public void execute(String[] commandParts) {
-        SetCommand setCommand = new SetCommand("set", new String[] {"-r", "-w"}, new String[] {"file","console"});
-        Settings actualSettings = setCommand.getCurrentSettings();
+        Settings actualSettings = Main.getCurrentSettings();
         System.out.println("Input: " + actualSettings.getInputType());
         System.out.println("Output: " + actualSettings.getOutputType());
     }

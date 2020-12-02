@@ -1,6 +1,7 @@
 package main.co.instea.commands;
 
 import main.co.instea.CommandExecution;
+import main.co.instea.Main;
 import main.co.instea.Settings;
 
 public class SetCommand extends Command {
@@ -9,22 +10,11 @@ public class SetCommand extends Command {
     }
     private String inputType="";
     private String outputType="";
-    public Settings currentSettings = new Settings("console","console");
 
     @Override
     public void execute(String[] commandParts) {
         Settings newSettings = setMethod(commandParts);
-//        if (newSettings != null) {
-            setCurrentSettings(newSettings);
-    }
-
-    public void setCurrentSettings(Settings settings) {
-        if (settings == null) return;
-        currentSettings = settings;
-    }
-
-    public Settings getCurrentSettings() {
-        return currentSettings;
+        Main.setCurrentSettings(newSettings);
     }
 
     @Override

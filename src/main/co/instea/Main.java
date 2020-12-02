@@ -18,6 +18,17 @@ public class Main {
         listOfCommands.add(new SettingsCommand("settings", new String[] {}, new String[] {}));
     }
 
+    private static Settings currentSettings = new Settings("console", "console");
+
+    public static void setCurrentSettings(Settings settings) {
+        if (settings == null) return;
+        currentSettings = settings;
+    }
+
+    public static Settings getCurrentSettings() {
+        return currentSettings;
+    }
+
     public static void main(String[] args) {
 
         System.out.println("Welcome to my console app, type 'h' to learn more.");
@@ -25,7 +36,6 @@ public class Main {
 
         String inputCommand;
         String inputCommandTrim;
-        //current set configuration for Read/Write
 
         //command line with never-ending loop unless 'q' pressed for quit
         outerLoop: while(true) {
@@ -41,6 +51,8 @@ public class Main {
             }
             System.out.println("Unknown command.");
         }
+
+
 
     }
 }
