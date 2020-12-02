@@ -5,11 +5,10 @@ import main.co.instea.Main;
 import main.co.instea.Settings;
 
 public class SetCommand extends Command {
-    public SetCommand(String keyword, String[] allowedSwitches, String[] allowedValues) {
-        super(keyword, allowedSwitches, allowedValues);
+    public SetCommand(String keyword, MySwitch [] mySwitches) {
+        super(keyword, mySwitches);
     }
-    private String inputType="";
-    private String outputType="";
+
 
     @Override
     public void execute(String[] commandParts) {
@@ -23,11 +22,10 @@ public class SetCommand extends Command {
     }
 
     public Settings setMethod (String[] setMode) {
-
+        String inputType;
+        String outputType;
         String sWitch;
         String value;
-        String[] switchArray= {"-r","-w"};
-        String[] valueArray= {"console","file"};
 
         //loop to separate all setModeCommands into array of size two: switch and value
         try{

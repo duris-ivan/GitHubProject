@@ -2,13 +2,11 @@ package main.co.instea.commands;
 
 public abstract class Command {
     public String keyword;
-    public String [] allowedSwitches;
-    public String [] allowedValues;
+    public MySwitch [] mySwitches;
 
-    public Command(String keyword, String [] allowedSwitches, String [] allowedValues){
+    public Command(String keyword, MySwitch [] mySwitches){
         this.keyword= keyword;
-        this.allowedSwitches=allowedSwitches;
-        this.allowedValues=allowedValues;
+        this.mySwitches= mySwitches;
     }
 
     public boolean shouldBeExecuted(String keyword) {

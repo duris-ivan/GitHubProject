@@ -14,7 +14,7 @@ public class Main {
         listOfCommands = new ArrayList<>();
         listOfCommands.add(new QuitCommand("q", new String[] {}, new String[] {}));
         listOfCommands.add(new HelpCommand("h", new String[] {}, new String[] {}));
-        listOfCommands.add(new SetCommand("set", new String[] {"-r", "-w"}, new String[] {"file","console"}));
+        listOfCommands.add(new SetCommand("set", new MySwitch[] {"-r", new String[] {"file", "console"}}));
         listOfCommands.add(new SettingsCommand("settings", new String[] {}, new String[] {}));
     }
 
