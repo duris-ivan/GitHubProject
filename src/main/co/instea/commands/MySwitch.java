@@ -11,4 +11,11 @@ public class MySwitch {
         this.allowedValues = allowedValues;
     }
 
+    public String getKey() {
+        return key;
+    }
+
+    public String[] getAllowedValues() {
+        return allowedValues;
+    }
 }

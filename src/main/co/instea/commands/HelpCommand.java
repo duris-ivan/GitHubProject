@@ -4,8 +4,8 @@ import main.co.instea.Main;
 
 public class HelpCommand extends Command{
 
-    public HelpCommand(String keyword, String[] allowedSwitches, String[] allowedValues) {
-        super(keyword, allowedSwitches, allowedValues);
+    public HelpCommand(String keyword, MySwitch[] mySwitches) {
+        super(keyword,mySwitches);
     }
 
     @Override

@@ -3,8 +3,8 @@ package main.co.instea.commands;
 public class QuitCommand extends Command{
 
 
-    public QuitCommand(String keyword, String[] allowedSwitches, String[] allowedValues) {
-        super(keyword, allowedSwitches, allowedValues);
+    public QuitCommand(String keyword, MySwitch [] mySwitches) {
+        super(keyword,mySwitches);
     }
 
     @Override

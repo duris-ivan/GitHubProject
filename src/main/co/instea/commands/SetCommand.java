@@ -22,8 +22,8 @@ public class SetCommand extends Command {
     }
 
     public Settings setMethod (String[] setMode) {
-        String inputType;
-        String outputType;
+        String inputType="";
+        String outputType="";
         String sWitch;
         String value;
 
@@ -43,33 +43,35 @@ public class SetCommand extends Command {
                 }
 
                 boolean matchOccurred=false;
-                for (int j=0;j<switchArray.length;j++){
-                    if (sWitch.equals(switchArray[j])){
+                for (int j=0;j<mySwitches.length;j++){
+                    if (sWitch.equals(mySwitches[j].getKey())){
                         matchOccurred=true;
+                        for(int k=0;k<mySwitches[j].getAllowedValues().length;k++){
+                            matchOccurred=true;
+                        }
                     }
                 }
                 if(!matchOccurred) {
-                    throw new Exception("go to catch - NoSwitch Error");
+                    throw new Exception("go to catch - NoSwitch or NoValue Error");
                 }
+                if(sWitch.equals(mySwitches[0].getKey())){
+                    if(value.equals(mySwitches[0].getAllowedValues()[0])){
+                        inputType=mySwitches[0].getAllowedValues()[0];
+                    }
+                    else if(value.equals(mySwitches[0].getAllowedValues()[1])){
+                        inputType=mySwitches[0].getAllowedValues()[1];
+                    }
+                }
+                else if(sWitch.equals(mySwitches[1].getKey())){
+                    if(value.equals(mySwitches[1].getAllowedValues()[0])){
+                        outputType=mySwitches[1].getAllowedValues()[0];
+                    }
+                    else if(value.equals(mySwitches[1].getAllowedValues()[1])){
+                        outputType=mySwitches[1].getAllowedValues()[1];
+                    }
+                }
+                /*
 
-                matchOccurred=false;
-                for (int j=0;j<valueArray.length;j++){
-                    if (value.equals(valueArray[j])){
-                        matchOccurred=true;
-                    }
-                }
-                if(!matchOccurred) {
-                    throw new Exception("go to catch - NoValue Error");
-                }
-
-                if(sWitch.equals(switchArray[0])){
-                    if(value.equals(valueArray[0])){
-                        inputType="console";
-                    }
-                    else if(value.equals(valueArray[1])){
-                        inputType="file";
-                    }
-                }
                 else if(sWitch.equals(switchArray[1])){
                     if(value.equals(valueArray[0])){
                         outputType="console";
@@ -77,7 +79,7 @@ public class SetCommand extends Command {
                     else if(value.equals(valueArray[1])){
                         outputType="file";
                     }
-                }
+                }*/
             }
             Settings settings = new Settings(inputType,outputType);
 

@@ -12,11 +12,18 @@ public class Main {
 
     static {
         listOfCommands = new ArrayList<>();
-        listOfCommands.add(new QuitCommand("q", new String[] {}, new String[] {}));
-        listOfCommands.add(new HelpCommand("h", new String[] {}, new String[] {}));
-        listOfCommands.add(new SetCommand("set", new MySwitch[] {"-r", new String[] {"file", "console"}}));
-        listOfCommands.add(new SettingsCommand("settings", new String[] {}, new String[] {}));
+        listOfCommands.add(new QuitCommand("q", new MySwitch[]{new MySwitch("", new String[] {})}));;
+        listOfCommands.add(new HelpCommand("h",new MySwitch[] {new MySwitch("", new String[] {})}));
+        listOfCommands.add(new SetCommand(
+                "set",
+                new MySwitch[] {
+                        new MySwitch("-r", new String[]{"file","console"}),
+                        new MySwitch("-w", new String[]{"file","console"}),
+                }));
+        listOfCommands.add(new SettingsCommand("settings", new MySwitch[] {new MySwitch("",new String[]{})}));
+
     }
+
 
     private static Settings currentSettings = new Settings("console", "console");
 

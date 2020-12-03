@@ -6,8 +6,8 @@ import main.co.instea.Main;
 
 public class SettingsCommand extends Command{
 
-    public SettingsCommand(String keyword, String[] allowedSwitches, String[] allowedValues) {
-        super(keyword, allowedSwitches, allowedValues);
+    public SettingsCommand(String keyword, MySwitch[] mySwitches) {
+        super(keyword,mySwitches);
     }
 
     @Override
