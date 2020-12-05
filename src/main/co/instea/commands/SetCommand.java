@@ -1,6 +1,5 @@
 package main.co.instea.commands;
 
-import main.co.instea.CommandExecution;
 import main.co.instea.Main;
 import main.co.instea.Settings;
 
@@ -13,7 +12,7 @@ public class SetCommand extends Command {
     @Override
     public void execute(String[] commandParts) {
         Settings newSettings = setMethod(commandParts);
-        Main.setCurrentSettings(newSettings);
+        Main.getCurrentSettings().mergeSettings(newSettings);
     }
 
     @Override
@@ -22,8 +21,8 @@ public class SetCommand extends Command {
     }
 
     public Settings setMethod (String[] setMode) {
-        String inputType="";
-        String outputType="";
+        String inputType=new String();
+        String outputType=new String();
         String sWitch;
         String value;
 

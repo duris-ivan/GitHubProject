@@ -27,4 +27,14 @@ public class Settings {
     public void setOutputType(String outputType) {
         this.outputType = outputType;
     }
+
+    public void mergeSettings(Settings newSettings){
+        if (newSettings == null) return;
+        if(!newSettings.getInputType().isEmpty()){
+            this.inputType = newSettings.getInputType();
+        }
+        if(!newSettings.getOutputType().isEmpty()){
+            this.outputType =newSettings.getOutputType();
+        }
+    }
 }
